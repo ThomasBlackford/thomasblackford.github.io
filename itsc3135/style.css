@@ -35,8 +35,17 @@ p {
     margin-bottom: 2em;
 }
 
+.btn-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
 a.btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 32px;
     background: #bcc0ca;
     color: #1d1d1f;
@@ -46,7 +55,7 @@ a.btn {
     font-weight: bold;
     text-decoration: none;
     transition: background 0.2s;
-    margin: 0 8px;
+    margin: 8px, 8px, 8px;
 }
 
 a.btn:hover {
