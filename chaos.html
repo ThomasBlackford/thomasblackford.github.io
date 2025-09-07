@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Absolute Chaos</title>
+<style>
+  html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; background: black; }
+  canvas { display: block; position: absolute; top: 0; left: 0; }
+  #chaosAudio { display: none; }
+</style>
+</head>
+<body>
+<audio id="chaosAudio" loop>
+  <source src="./audio/your-audio-file.mp3" type="audio/mpeg">
+  <source src="./audio/your-audio-file.wav" type="audio/wav">
+  <source src="./audio/your-audio-file.ogg" type="audio/ogg">
+</audio>
+
+<div id="controlPanel" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; text-align: center;">
+  <button id="startButton" style="padding: 20px; font-size: 18px; background: #ff4444; color: white; border: none; border-radius: 10px; cursor: pointer; margin: 10px;">
+    🐄 START THE CHAOS! 🐄
+  </button>
+  <br>
+  <button id="ttsButton" style="padding: 15px; font-size: 16px; background: #44ff44; color: black; border: none; border-radius: 10px; cursor: pointer; margin: 10px; display: none;">
+    🔊 ENABLE TTS MADNESS! 🔊
+  </button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+let chaosStarted = false;
+let ttsEnabled = false;
+let speechSynth = window.speechSynthesis;
+let ttsInterval = null;
+
+// Chaotic TTS messages
+const chaosMessages = [
+    "start diggin in your butt twin",
+    "+1 gay karma for you",
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "77777777777777777",
+    "aaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhhhh",
+    "you are a loser",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "you have 1 day to live",
+    "random ape event begins in....30.....minutes.....prepare.....your.....cheeks...",
+    "your mother is in my lap right now",
+    "i have a dildo in my ass",
+    "if you are hearing this as a teachers assistant from a course I am now watching your every move. You have approixmentaly 3 days to submit sacrifices to me.",
+    "i am secretly a closeted raging homosexual furry and I watch fart porn",
+    "my friend Kieran Lieberg watches inflation foota"
+];
+
+// TTS Functions
+function speakChaos() {
+    if (!ttsEnabled || !speechSynth) return;
+    
+    try {
+        // Cancel current speech
+        
+        // Pick random message
+        let message = chaosMessages[Math.floor(Math.random() * chaosMessages.length)];
+        
+        // Create utterance
+        let utterance = new SpeechSynthesisUtterance(message);
+        
+        // Get available voices and pick a random one
+        let voices = speechSynth.getVoices();
+        if (voices.length > 0) {
+            utterance.voice = voices[Math.floor(Math.random() * voices.length)];
+        }
+        
+        // Random speech parameters for extra chaos
+        utterance.rate = 1.5;
+        utterance.pitch = 0.4;
+        utterance.volume = 8;
+        
+        // Speak it
+        speechSynth.speak(utterance);
+    } catch (error) {
+        console.log('TTS error:', error);
+    }
+}
+
+function startTTSChaos() {
+    if (ttsInterval) return;
+    
+    ttsInterval = setInterval(() => {
+        if (chaosStarted && ttsEnabled) {
+            speakChaos();
+        }
+    }, 2000);
+}
+
+// Button handlers
+document.getElementById('startButton').addEventListener('click', function() {
+    const audio = document.getElementById('chaosAudio');
+    audio.volume = 0.5;
+    audio.currentTime = 0;
+    
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            console.log('Audio started');
+        }).catch(error => {
+            console.log('Audio play failed:', error);
+            setTimeout(() => {
+                audio.play().catch(e => console.log('Retry failed:', e));
+            }, 1000);
+        });
+    }
+    
+    this.style.display = 'none';
+    document.getElementById('ttsButton').style.display = 'inline-block';
+    chaosStarted = true;
+});
+
+document.getElementById('ttsButton').addEventListener('click', function() {
+    ttsEnabled = !ttsEnabled;
+    if (ttsEnabled) {
+        this.textContent = '🔇 DISABLE TTS MADNESS! 🔇';
+        this.style.background = '#ff4444';
+        this.style.color = 'white';
+        startTTSChaos();
+    } else {
+        this.textContent = '🔊 ENABLE TTS MADNESS! 🔊';
+        this.style.background = '#44ff44';
+        this.style.color = 'black';
+        if (speechSynth) speechSynth.cancel(); // Stop all speech
+        if (ttsInterval) {
+            clearInterval(ttsInterval);
+            ttsInterval = null;
+        }
+    }
+    
+    // Hide button after 3 seconds
+    setTimeout(() => {
+        document.getElementById('controlPanel').style.display = 'none';
+    }, 3000);
+});
+
+// === Canvas for fractals and cows ===
+let canvas2 = document.createElement('canvas');
+canvas2.width = window.innerWidth;
+canvas2.height = window.innerHeight;
+document.body.appendChild(canvas2);
+canvas2.style.zIndex = 10;
+let ctx = canvas2.getContext('2d');
+
+function drawFractal(x, y, size, depth) {
+    if (depth <= 0) return;
+    ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + size, y);
+    ctx.lineTo(x + size/2, y - size);
+    ctx.closePath();
+    ctx.stroke();
+    
+    if (depth > 1) {
+        drawFractal(x + size/4, y - size/2, size/2, depth - 1);
+        drawFractal(x + size * 0.75, y - size/2, size/2, depth - 1);
+    }
+}
+
+let cowEmoji = '🐄';
+let cows = [];
+for (let i = 0; i < 30; i++) {
+    cows.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        speed: 1 + Math.random() * 5,
+        rotation: Math.random() * 360
+    });
+}
+
+function drawCows() {
+    ctx.font = '40px serif';
+    cows.forEach(c => {
+        ctx.save();
+        ctx.translate(c.x, c.y);
+        ctx.rotate(c.rotation * Math.PI / 180);
+        ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        ctx.fillText(cowEmoji, -20, 20);
+        ctx.restore();
+        
+        c.y += c.speed;
+        c.rotation += 2;
+        if (c.y > window.innerHeight + 50) {
+            c.y = -50;
+            c.x = Math.random() * window.innerWidth;
+        }
+    });
+}
+
+// === Flashing background ===
+let flashColor = 0;
+function flashLoop() {
+    if (chaosStarted) {
+        flashColor += 5;
+        document.body.style.background = `hsl(${flashColor % 360}, 100%, 30%)`;
+    }
+    requestAnimationFrame(flashLoop);
+}
+
+// === Three.js Scene ===
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+let renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.domElement.style.zIndex = 5;
+document.body.appendChild(renderer.domElement);
+
+// Rainbow dodecahedron
+let geometry = new THREE.DodecahedronGeometry(1, 0);
+let material = new THREE.MeshPhongMaterial({
+    color: 0xffffff,
+    shininess: 100,
+    transparent: true,
+    opacity: 0.8
+});
+
+let dode = new THREE.Mesh(geometry, material);
+scene.add(dode);
+
+// Multiple spinning objects
+let cubes = [];
+for (let i = 0; i < 5; i++) {
+    let cubeGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+    let cubeMat = new THREE.MeshPhongMaterial({ 
+        color: Math.random() * 0xffffff,
+        transparent: true,
+        opacity: 0.7
+    });
+    let cube = new THREE.Mesh(cubeGeo, cubeMat);
+    cube.position.set(
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 10
+    );
+    scene.add(cube);
+    cubes.push(cube);
+}
+
+// Lighting
+let light1 = new THREE.PointLight(0xff4444, 1, 100);
+light1.position.set(10, 10, 10);
+scene.add(light1);
+
+let light2 = new THREE.PointLight(0x44ff44, 1, 100);
+light2.position.set(-10, -10, 10);
+scene.add(light2);
+
+let light3 = new THREE.PointLight(0x4444ff, 1, 100);
+light3.position.set(0, 10, -10);
+scene.add(light3);
+
+scene.add(new THREE.AmbientLight(0x404040, 0.3));
+
+camera.position.z = 5;
+
+// === Animation loop ===
+let time = 0;
+function animate() {
+    requestAnimationFrame(animate);
+    
+    if (!chaosStarted) {
+        return;
+    }
+    
+    time += 0.01;
+    
+    // Dodecahedron wild rotation
+    dode.rotation.x += 0.03 + Math.sin(time) * 0.02;
+    dode.rotation.y += 0.02 + Math.cos(time) * 0.03;
+    dode.rotation.z += 0.01;
+    
+    // Move dodecahedron around
+    dode.position.x = Math.sin(time * 2) * 2;
+    dode.position.y = Math.cos(time * 1.5) * 1.5;
+    
+    // Animate cubes
+    cubes.forEach((cube, i) => {
+        cube.rotation.x += 0.02 + i * 0.01;
+        cube.rotation.y += 0.03 + i * 0.005;
+        cube.position.x = Math.sin(time + i) * 3;
+        cube.position.y = Math.cos(time * 1.2 + i) * 2;
+        cube.material.color.setHSL((time + i * 0.2) % 1, 1, 0.5);
+    });
+    
+    // Move lights around
+    light1.position.x = Math.sin(time * 3) * 5;
+    light1.position.y = Math.cos(time * 2) * 5;
+    light2.position.x = Math.cos(time * 2.5) * 4;
+    light2.position.z = Math.sin(time * 1.8) * 4;
+    
+    // Fractals and cows
+    ctx.clearRect(0, 0, canvas2.width, canvas2.height);
+    
+    // Draw multiple fractals
+    for (let i = 0; i < 8; i++) {
+        drawFractal(
+            Math.random() * canvas2.width,
+            canvas2.height * 0.8 + Math.random() * canvas2.height * 0.2,
+            50 + Math.random() * 100,
+            4
+        );
+    }
+    
+    drawCows();
+    
+    // Camera movement
+    camera.position.x = Math.sin(time * 0.5) * 2;
+    camera.position.y = Math.cos(time * 0.3) * 1.5;
+    camera.lookAt(dode.position);
+    
+    renderer.render(scene, camera);
+}
+
+animate();
+flashLoop();
+
+// Screen shake effect
+setInterval(() => {
+    if (chaosStarted && Math.random() > 0.7) {
+        document.body.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
+        setTimeout(() => {
+            document.body.style.transform = 'translate(0px, 0px)';
+        }, 100);
+    }
+}, 500);
+
+// Resize handler
+let speedGifs = [];
+
+function createSpeedGif() {
+    if (!chaosStarted) return;
+    
+    let gif = document.createElement('img');
+    gif.src = 'https://media.tenor.com/wPSQTFPAhsEAAAAM/i-show-speed-stupid.gif';
+    gif.style.position = 'absolute';
+    gif.style.width = (100 + Math.random() * 200) + 'px';
+    gif.style.height = 'auto';
+    gif.style.left = Math.random() * (window.innerWidth - 200) + 'px';
+    gif.style.top = Math.random() * (window.innerHeight - 200) + 'px';
+    gif.style.zIndex = 20;
+    gif.style.pointerEvents = 'none';
+    gif.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+    gif.style.opacity = 0.8 + Math.random() * 0.2;
+    
+    document.body.appendChild(gif);
+    speedGifs.push(gif);
+    
+    setTimeout(() => {
+        if (gif.parentNode) {
+            gif.parentNode.removeChild(gif);
+        }
+        let index = speedGifs.indexOf(gif);
+        if (index > -1) {
+            speedGifs.splice(index, 1);
+        }
+    }, 2000 + Math.random() * 3000);
+}
+
+setInterval(createSpeedGif, 3000);
+
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    canvas2.width = window.innerWidth;
+    canvas2.height = window.innerHeight;
+});
+
+// Initialize voices when available
+if (speechSynth && speechSynth.onvoiceschanged !== undefined) {
+    speechSynth.onvoiceschanged = function() {
+        // Voices loaded, ready for TTS
+    };
+}
+</script>
+</body>
+</html>
