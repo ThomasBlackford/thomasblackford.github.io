@@ -6,35 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="itsc3135/style.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <script src="scripts/HTMLInclude.js"></script>
 </head>
 <body>
-    <header>
+    
+    <!-- HEADER -->
+    <div include-html="components/header.html"></div>
+
+    <!--MAIN BODY-->
+    <main>
         <h1>Thomas Blackford</h1>
         <h2>Software Developer</h2>
-        <p>Welcome to my personal webpage! I am passionate about game development and web technologies. Feel free to explore some of my projects below, check out my GitHub and contact me through my email!</p>
+        <p>
+            Welcome to my personal webpage! I am passionate about game development and web technologies. 
+            Feel free to explore some of my projects below, check out my GitHub and contact me through my email!
+        </p>
+
+        <!-- Project Links -->
         <section class="btn-group">
-            <a href="https://github.com/thomasblackford" class="btn" target="_blank">GitHub</a>
-            <a href="mailto:tommyblackfordjs@gmail.com" class="btn" target="_blank">Contact Me</a>
-            <a href="https://www.linkedin.com/in/thomas-blackford-5451562bb/" class="btn" target="_blank">Linked In</a>
+            <a href="https://github.com/thomasblackford" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="mailto:tommyblackfordjs@gmail.com" class="btn" target="_blank" rel="noopener noreferrer">Contact Me</a>
+            <a href="https://www.linkedin.com/in/thomas-blackford-5451562bb/" class="btn" target="_blank" rel="noopener noreferrer">Linked In</a>
             <a href="itsc3135/tenaciousbeaver/index.html" class="btn">Tenacious Beaver</a>
         </section>
-        
-    </header>
 
-    <main>
+        <!-- Coursework Links -->
         <h2>Course Work</h2>
         <section class="btn-group">
-            <a href="/itsc3135/" class="btn" target="_blank">ITSC3135 - Front End Web Development</a>
-            <a href="/itsc3135/introduction.html" class="btn" target="_blank">Introduction</a>
-            <a href="/itsc3135/contract.html" class="btn" target="_blank">Contract</a>
-            <a href="https://webpages.charlotte.edu/tblackf1/" class="btn" target="_blank">Charlotte Webpage</a>
-            
-
+            <a href="itsc3135/" class="btn" target="_blank" rel="noopener noreferrer">ITSC3135 - Front End Web Development</a>
+            <a href="itsc3135/introduction.html" class="btn" target="_blank" rel="noopener noreferrer">Introduction</a>
+            <a href="itsc3135/contract.html" class="btn" target="_blank" rel="noopener noreferrer">Contract</a>
+            <a href="https://webpages.charlotte.edu/tblackf1/" class="btn" target="_blank" rel="noopener noreferrer">Charlotte Webpage</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Thomas Blackford. All rights reserved.</p>
-    </footer>
+    <!-- FOOTER  -->
+    <div include-html="components/footer.html"></div>
+    
 </body>
 </html>
