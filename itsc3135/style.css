@@ -120,3 +120,19 @@ a.btn:hover {
         font-size: 2em;
     }
 }
+
+main {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+
+    
+}
+
+@media (max-width: 992px) {
+    main { width: 95%; }
+}
+
+@media (max-width: 600px) {
+    main { width: 100%; font-size: 0.9rem; }
+}
