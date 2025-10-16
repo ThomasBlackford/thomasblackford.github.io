@@ -1,18 +1,22 @@
 function includeHTML() {
-    const elements = document.querySelectorAll('[include-html]');
+    const elements = document.querySelectorAll('[data-include-html]');
     elements.forEach(el => {
-        const file = el.getAttribute('include-html');
+        const file = el.getAttribute('data-include-html');
         if (file) {
             fetch(file)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) throw new Error('HTTP error ' + response.status);
+                    return response.text();
+                })
                 .then(data => {
                     el.innerHTML = data;
                 })
                 .catch(err => {
                     el.innerHTML = "Content not found.";
-                    console.error("Include Error: ", err);
+                    console.error("Include Error:", err);
                 });
-            }
-        });
+        }
+    });
 }
+
 document.addEventListener("DOMContentLoaded", includeHTML);
