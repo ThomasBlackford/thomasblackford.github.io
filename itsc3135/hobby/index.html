@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>Exploring the Kerbol System</title>
+    <style>
+        body {
+        background-color: #0b0e13;
+        color: #e6edf3;
+        font-family: "Orbitron", "Exo 2", sans-serif;
+        line-height: 1.6;
+        text-align: center;
+        padding-bottom: 3em;
+        }
+
+        header {
+        background: linear-gradient(90deg, #09131b, #0d1822);
+        border-bottom: 2px solid #1b2d3a;
+        padding: 1.5em 0;
+        margin-bottom: 2em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+        color: #9be218;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        }
+
+        h2 {
+        color: #f9f871;
+        margin-bottom: 1em;
+        text-shadow: 0 0 5px #9be21855;
+        }
+
+        nav {
+        margin-top: 1em;
+        }
+
+        nav a {
+        color: #9be218;
+        text-decoration: none;
+        margin: 0 0.6em;
+        font-weight: 600;
+        transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+        color: #f9f871;
+        text-shadow: 0 0 10px #f9f87199;
+        }
+
+        nav a::after {
+        content: " ✦";
+        color: #44535e;
+        }
+
+        nav a:last-child::after {
+        content: "";
+        }
+
+        main {
+        width: 85%;
+        max-width: 900px;
+        margin: 0 auto;
+        }
+
+        section {
+        display: none;
+        margin-bottom: 3em;
+        animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+        }
+
+        figure {
+        margin: 2em auto;
+        text-align: center;
+        }
+
+        figure img {
+        width: 80%;
+        max-width: 600px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(155, 226, 24, 0.2);
+        }
+
+        figcaption {
+        margin-top: 0.5em;
+        color: #9be218;
+        font-style: italic;
+        font-size: 0.95rem;
+        }
+
+        ul {
+        list-style: none;
+        margin: 1.5em auto;
+        padding: 0;
+        width: fit-content;
+        text-align: left;
+        }
+
+        ul li {
+        background-color: #111821;
+        border-left: 3px solid #9be218;
+        padding: 0.6em 1em;
+        margin-bottom: 0.6em;
+        border-radius: 6px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+        background: #0d1822;
+        border-top: 2px solid #1b2d3a;
+        padding: 1em 0;
+        color: #9be218;
+        font-size: 0.9rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+
+        footer a {
+        color: #9be218;
+        text-decoration: none;
+        margin: 0 0.3em;
+        }
+
+        footer a:hover {
+        color: #f9f871;
+        text-shadow: 0 0 5px #f9f87199;
+        }
+
+        a:focus, button:focus {
+        outline: 2px solid #f9f871;
+        outline-offset: 4px;
+        }
+
+        @media (max-width: 600px) {
+        h1 { font-size: 1.6rem; }
+        nav a { display: block; margin: 0.3em 0; }
+        figure img { width: 95%; }
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll("section").forEach((sec) => sec.style.display = "none");
+            document.getElementById(id).style.display = "block";
+        }
+
+        window.onload = function() {
+            showSection('what');
+        };
+    </script>
+</head>
+<body>
+
+
+    <header>
+    <h1>Exploring the Kerbol System</h1>
+    <nav>
+      <a href="#" onclick="showSection('what')">What</a> ✦
+      <a href="#" onclick="showSection('who')">Who</a> ✦
+      <a href="#" onclick="showSection('when')">When</a> ✦
+      <a href="#" onclick="showSection('where')">Where</a> ✦
+      <a href="#" onclick="showSection('how')">How</a> ✦
+      <a href="#" onclick="showSection('why')">Why</a> ✦
+      <a href="#" onclick="showSection('ai')">AI Prompts</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="what">
+  <h2>What Is Kerbal Space Program?</h2>
+
+  <p>
+    <strong>Kerbal Space Program (KSP)</strong> is a space-flight simulation game where you design, build, and launch rockets to explore the fictional <em>Kerbol System</em>.  
+    Every part of your spacecraft obeys realistic physics, making every mission a balance between creativity, engineering, and orbital mechanics.
+  </p>
+
+  <p>
+    Players manage their own space agency,building vehicles, testing rockets, and discovering new planets and moons.  
+    Each success or spectacular failure teaches valuable lessons about propulsion, stability, and the vastness of space.
+  </p>
+
+  <figure>
+    <img src="images/kerbal_launch.png" alt="Kerbal rocket launching into orbit above Kerbin">
+    <figcaption>First launch from the Kerbal Space Center, breaking through the atmosphere.</figcaption>
+  </figure>
+  <p><em>AI prompt: “Kerbal-style rocket launch from Kerbin, stylized realism, dramatic lighting.”</em></p>
+
+  <p>
+    The game blends humor and science,tiny green astronauts known as <strong>Kerbals</strong> bravely risk their lives in the name of exploration.  
+    With the right design and a bit of luck, you can plant flags on distant worlds or build vast stations orbiting gas giants.
+  </p>
+
+  <p>
+    Whether you’re launching your first sub-orbital flight or beginning a complex interplanetary mission,  
+    <strong>KSP</strong> captures the joy, frustration, and triumph of real-world space exploration.
+  </p>
+    </section>
+    <section id="who">
+        <h2>Who Plays Kerbal Space Program?</h2>
+
+        <p>
+            <strong>Kerbal Space Program</strong> attracts players who love problem solving, creativity, and the science behind exploration.  
+            Engineers, students, gamers, and space enthusiasts all find satisfaction in designing spacecraft that actually work, or at least explode spectacularly trying.
+        </p>
+
+        <p>
+            It’s a hobby for people who enjoy the challenge of physics and the reward of learning through failure.  
+            You don’t need a degree in rocket science, just curiosity, patience, and a willingness to iterate over and over.
+        </p>
+
+        <figure>
+            <img src="images/kerbal_player_base.png" alt="Player-built rocket on Kerbin launchpad under starry sky">
+            <figcaption>Every KSP player starts here. One small rocket that will likely explode.</figcaption>
+        </figure>
+        <p><em>AI prompt: “Player-built rocket on Kerbin launchpad under starry sky, KSP style. Looks like in game screenshot.”</em></p>
+
+        <h3>About Me</h3>
+
+        <p>
+            I started playing KSP because I’ve always been fascinated by space and how it functions.  
+            The game gave me a creative outlet where I could build, experiment, and actually see the results of my designs in motion and experience orbital mechanics firsthand.  
+            Every successful launch feels earned, every failure teaches something, and every landing feels like an accomplishment.
+        </p>
+
+        <p>
+            What I enjoy most is the mix of <strong>astrophysics logic</strong> and <strong>imagination</strong>.  
+            I can spend hours tweaking a design, then watch it soar past the Mun or spin wildly out of control. Both are equally satisfying in their own way.  
+            It’s the perfect blend of chaos and creativity.
+        </p>
+
+        <p>
+            Whether it’s a kid discovering space for the first time or an adult reigniting a sense of wonder,  
+            KSP is a community built on curiosity, a shared desire to reach higher, crash harder, and try again.
+        </p>
+    </section>
+    <section id="when">
+        <h2>When to Enjoy Kerbal Space Program</h2>
+
+        <p>
+            KSP is a hobby that can be enjoyed any time of the year, there’s no off-season in space!  
+            But there are certain moments in the game that make it feel especially awesome.
+        </p>
+
+        <p>
+            <strong>Early Career:</strong> Your first few launches are full of learning and small victories.  
+            Learning how rockets behave, achieving orbit for the first time, or landing on the Mun makes every hour feel valuable.
+        </p>
+
+        <p>
+            <strong>Interplanetary Missions:</strong> Once you’ve mastered basic orbital mechanics, tackling Duna, Jool, or even some outer planets feels like a milestone.  
+            Planning your transfer windows and watching your spacecraft execute landings perfectly is one of the most satisfying points in the game.
+        </p>
+
+        <figure>
+            <img src="images/kerbal_mission_window.png" alt="Kerbal spacecraft en route to Duna, solar system in background">
+            <figcaption>Timing your mission during the perfect transfer window maximizes fuel efficiency and success.</figcaption>
+        </figure>
+        <p><em>AI prompt: “Kerbal spacecraft traveling to Duna, realistic cartoon style, planets aligned in background. Looks like in game screenshot.”</em></p>
+
+        <p>
+            <strong>Creative Builds:</strong> There’s also no wrong time to experiment.  
+            Even without a mission objective, designing massive space stations, elaborate landers, or aesthetic rockets is a rewarding experience at any hour.
+        </p>
+
+        <p>
+            In short, the best time to play KSP is whenever you’re ready to learn, explore, and have fun. Whether that’s a quick 20-minute launch or a multi-hour mission to rescue kerbals on Eve.
+        </p>
+    </section>
+    <section id="where">
+        <h2>Where to Explore in KSP</h2>
+
+        <p>
+            While KSP is a game you can play anywhere, the true excitement comes from visiting the most interesting celestial locations in the Kerbol system.  
+            Here are three of my favorite destinations:
+        </p>
+
+        <figure>
+            <img src="images/dres_canyon.png" alt="Dres surface with canyon and spacecraft exploring">
+            <figcaption>Dres Canyon: a dramatic, jagged canyon system perfect for landing challenges.</figcaption>
+        </figure>
+        <p><em>AI prompt: “Kerbal Space Program-inspired spacecraft exploring a large canyon on Dres, in-game screenshot”</em></p>
+
+        <p>
+            <strong>Dres Canyon</strong> is one of the most challenging terrains to land on. Its rugged surface makes every landing a precise, tense struggle.
+            While Dres itself is small and mostly barren, the canyon system provides a unique opportunity you can't find anywhere else.
+        </p>
+
+        <figure>
+            <img src="images/laythe_ocean.png" alt="Laythe’s ocean and islands from orbit with a Kerbal spacecraft">
+            <figcaption>Laythe: the ocean world with a breathable atmosphere and endless exploration opportunities.</figcaption>
+        </figure>
+        <p><em>AI prompt: “Kerbal spacecraft descending onto Laythe, showing blue oceans, islands, and clouds, in-game screenshot.”</em></p>
+
+        <p>
+            <strong>Laythe</strong> is a favorite for interplanetary missions. Its oceans and atmosphere allow for unique landing strategies. Seaplanes, SSTOs (single stage to orbit), or orbital stations make every mission creative and fun.
+            Laythe is also visually stunning and unique. The blue oceans and scattered islands create an awesome place to explore, and is also the only moon in the Kerbol system with a breathable atmosphere.
+        </p>
+
+        <figure>
+            <img src="images/mohole.jpg" alt="Kerbal spacecraft descending into the Mohole">
+            <figcaption>The Mohole: a deep, mysterious crater on the planet Moho that challenges even veteran players.</figcaption>
+        </figure>
+        <p><em>AI prompt: “Kerbal spacecraft exploring the Mohole, deep crater on Moho, in-game screenshot.”</em></p>
+
+        <p>
+            The <strong>Mohole</strong> is legendary among KSP players. Its depth and steep cliffs make for thrilling landings and daring explorations. Dropping a probe or Kerbal into its depths is always a highlight.
+            The Mohole is not only challenging to land in, but Moho itself is a difficult planet to reach due to its proximity to the sun and high orbital velocity, requiring massive Delta V for missions.
+            Fun Fact: The Mohole was actually originally caused by a heightmap glitch in early versions of KSP, but it became so popular that it was kept as a permanent feature!
+        </p>
+
+    </section>
+    <section id="how">
+        <h2>How to Master Kerbal Space Program</h2>
+
+        <p>
+            KSP is more than just building rockets, it’s about <strong>planning, precision, and problem-solving</strong>.  
+            Every mission involves multiple steps, from designing your spacecraft to calculating orbits and landing safely on distant worlds.
+        </p>
+
+        <p>
+            <strong>Stage Planning:</strong> Break your rocket into logical stages. Boosters, main engines, landers, and return modules.  
+            Proper staging maximizes efficiency and prevents mid-flight disasters.
+        </p>
+
+        <p>
+            <strong>Delta-V Analysis:</strong> Every maneuver consumes fuel. Knowing how much delta-v you need for launch, transfer windows, and landing prevents being stranded in space.
+        </p>
+
+        <p>
+            <strong>Transfer Windows:</strong> Timing is critical when going interplanetary. Use launch windows to minimize fuel costs and maximize efficiency for journeys to Duna, Jool, or beyond.
+        </p>
+
+        <p>
+            <strong>Communication Networks:</strong> Interplanetary missions require stable communications. Placing satellites in orbit or relay stations ensures your probes and landers stay connected to Mission Control when visitng the far reaches of the system.
+        </p>
+
+        <figure>
+            <img src="images/stage_and_mission.jpg" alt="Rocket stage diagram and mission planning overview in KSP">
+            <figcaption>Planning stages, calculating delta-v, scheduling transfer windows, and setting up com-nets is key for mission success.</figcaption>
+        </figure>
+        <p><em>AI prompt: “Kerbal Space Program mission planning overview with rocket stage diagram, transfer windows, delta-v chart, and satellite com-net, cartoon realism style.”</em></p>
+
+        <p>
+            By mastering these strategies, you’ll turn each mission from a risky gamble into a controlled, thrilling adventure across the Kerbol system.
+        </p>
+    </section>
+    <section id="why">
+        <h2>Why I Love Kerbal Space Program</h2>
+
+        <p>
+            Kerbal Space Program isn’t just a game, it’s an interactive lesson in <strong>orbital mechanics</strong> and spaceflight.  
+            Every mission teaches about trajectories, gravity assists, and fuel management in a way that’s both fun and challenging.
+        </p>
+
+        <p>
+            Beyond the mechanics, KSP scratches a fundamental <strong>space exploration itch</strong>.  
+            Launching rockets, visiting distant planets, and orbiting moons gives you the thrill of discovery without ever leaving your room.
+        </p>
+
+        <figure>
+            <img src="images/why_ksp.png" alt="Scenic view of Laythe with Volcanos">
+            <figcaption>KSP allows me to experience the wonder of space, one mission at a time.</figcaption>
+        </figure>
+        <p><em>This one isnt AI. I took this screenshot myself with my modded game to showcase the beauty. (Pictured, Laythe)</em></p>
+
+        <p>
+            Personally, KSP has been part of my life since childhood. I grew up dreaming of becoming an <strong>astrophysicist</strong>, and the game was a huge inspiration for that curiosity.  
+            While I eventually chose <strong>computer science</strong> as a career for a more practical path, KSP remains a way to connect with that dream and explore the cosmos in my own way.
+        </p>
+
+        <p>
+            The game combines my love of physics, problem-solving, and creativity, making every launch or mission a satisfying experience.  
+            Even after years of playing, it still scratches that space itch and reminds me why I fell in love with exploration in the first place.
+        </p>
+
+    </section>
+    <section id="ai">
+        <h2>AI Prompts Used for Images</h2>
+
+        <p>All images on this site (except one) were generated using AI based on the following prompts:</p>
+
+        <ul>
+            <li>“Kerbal Space Program mission planning overview with rocket stage diagram, transfer windows, delta-v chart, and satellite com-net, cartoon realism style.”</li>
+            <li>“Kerbal spacecraft exploring the Mohole, deep crater on Moho, in-game screenshot.”</li>
+            <li>“Kerbal spacecraft descending onto Laythe, showing blue oceans, islands, and clouds, in-game screenshot.”</li>
+            <li>“Kerbal Space Program-inspired spacecraft exploring a large canyon on Dres, in-game screenshot.”</li>
+            <li>“Kerbal spacecraft traveling to Duna, realistic cartoon style, planets aligned in background. Looks like in game screenshot.”</li>
+            <li>“Player-built rocket on Kerbin launchpad under starry sky, KSP style. Looks like in game screenshot.”</li>
+            <li>“Kerbal-style rocket launch from Kerbin, stylized realism, dramatic lighting.”</li>
+        </ul>
+
+        <p><em>All prompts were used to create the visual illustrations for this hobby site. AI was used to refine some paragraphs, but overall most text was mine. No AI used for site structure.</em></p>
+    </section>
+
+  </main>
+
+
+</body>
