@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../scripts/HTMLInclude.js"></script>
+    <script defer src="../scripts/introduction.js"></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div data-include-html="../components/header.html"></div>
+
+    <main>
+        <h2>Introduction Form</h2>
+
+        <form id="introForm">
+            <label>First Name: <input type="text" name="firstName" value="Thomas" required placeholder="First Name"></label><br>
+            <label>Middle Name/Initial: <input type="text" name="middleName" placeholder="Middle Name"></label><br>
+            <label>Nickname/Preferred Name: <input type="text" name="nickname" placeholder="Nickname"></label><br>
+            <label>Last Name: <input type="text" name="lastName" value="Blackford" required placeholder="Last Name"></label><br><br>
+
+            <label>Acknowledgment Statement: <input type="text" name="ackStatement" value="I acknowledge this is my work" required placeholder="Acknowledgment Statement"></label><br>
+            <label>Acknowledgment Date: <input type="date" name="ackDate" required></label><br><br>
+
+            <label>Mascot Adjective: <input type="text" name="mascotAdj" value="Fearless" required></label><br>
+            <label>Mascot Animal: <input type="text" name="mascotAnimal" value="Panther" required></label><br>
+            <label>Divider Symbol: <input type="text" name="divider" value="~" required></label><br><br>
+
+            <label>Profile Picture: <input type="file" name="image" accept="image/*"></label><br>
+            <label>Picture Caption: <input type="text" name="caption" value="Image of Me in Montana in 2024" required></label><br><br>
+
+            <label>Personal Statement:</label><br>
+            <textarea name="personalStatement" rows="5" required>Hello! My name is Thomas Blackford. I am a dedicated student with a passion for technology and learning. Academically, I am pursuing a degree in Computer Science, focusing on software development and web design. Professionally, I have experience working on web development projects and game design. Personally, I enjoy writing stories, volleyball, and piano.</textarea><br><br>
+
+            <label>7 Main Bullets (comma separated):</label><br>
+            <textarea name="bullets" rows="3" required>Personal Background, Academic Background, Professional Background, Hobbies, Career Goals, Interests, Skills</textarea><br><br>
+
+            <h4>Courses</h4>
+            <div id="courses">
+                <div class="course">
+                    <input type="text" name="dept" value="ITSC" placeholder="Dept" required>
+                    <input type="text" name="number" value="3135" placeholder="Number" required>
+                    <input type="text" name="name" value="Front End Web Development" placeholder="Name" required>
+                    <input type="text" name="reason" value="Required for my concentration and useful for my field." placeholder="Reason" required>
+                </div>
+                <div class="course">
+                    <input type="text" name="dept" value="ITSC" placeholder="Dept" required>
+                    <input type="text" name="number" value="3146" placeholder="Number" required>
+                    <input type="text" name="name" value="Intro to Operating Systems" placeholder="Name" required>
+                    <input type="text" name="reason" value="Required for my major." placeholder="Reason" required>
+                </div>
+            </div>
+            <button type="button" id="addCourse">Add Course</button><br><br>
+
+            <label>Favorite Quote:</label><br>
+            <input type="text" name="quote" value="Strive not to be a success, but rather to be of value." required><br>
+            <label>Quote Author:</label>
+            <input type="text" name="quoteAuthor" value="Albert Einstein" required><br><br>
+
+            <label>Funny Thing (optional): <input type="text" name="funny" placeholder="Something funny"></label><br>
+            <label>Something I’d like to share (optional): <input type="text" name="share" placeholder="Something you'd like to share"></label><br><br>
+
+            <h4>Links</h4>
+            <input type="url" name="link1" placeholder="LinkedIn URL" value="https://linkedin.com/in/thomasblackford" required><br>
+            <input type="url" name="link2" placeholder="GitHub URL" value="https://github.com/thomasblackford" required><br>
+            <input type="url" name="link3" placeholder="Portfolio URL" value="https://webpages.charlotte.edu/tblackfo" required><br>
+            <input type="url" name="link4" placeholder="Personal Project" value="https://tblackford.dev" required><br>
+            <input type="url" name="link5" placeholder="Another Link" value="https://example.com" required><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="clearButton">Clear</button>
+        </form>
+    </main>
+
+    <div data-include-html="../components/footer.html"></div>
+
+</body>
+
+</html>
