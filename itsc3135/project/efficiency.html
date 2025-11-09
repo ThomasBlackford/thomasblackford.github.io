@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloons Money Maker Tool – [Page Name]</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Bloons Money Maker Tool</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="towers.html">Towers</a></li>
+            <li><a href="crosspaths.html">Crosspaths</a></li>
+            <li><a href="efficiency.html">Efficiency</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <main>
+    <h2>Efficiency Comparison</h2>
+    <p>Compare towers by profit-to-cost ratio. The chart below displays income efficiency.</p>
+    <canvas id="efficiencyChart" width="600" height="400"></canvas>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('efficiencyChart');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Banana Farm', 'Merchantman', 'Buccaneer (Trade Empire)'],
+        datasets: [{
+            label: 'Profit / Cost Ratio',
+            data: [1.4, 1.2, 1.8],
+        }]
+    },
+});
+</script>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Bloons Money Maker Tool | Created by Thomas Blackford</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

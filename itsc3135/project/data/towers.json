@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Banana Farm",
+    "type": "Support",
+    "cost": 1200,
+    "income": 80,
+    "image": "images/farm.png",
+    "description": "Generates bananas that grant cash each round."
+  },
+  {
+    "name": "Merchantman",
+    "type": "Military",
+    "cost": 2000,
+    "income": 200,
+    "image": "images/merchantman.png",
+    "description": "Generates $200 per round. Can be upgraded to boost income."
+  },
+  {
+    "name": "Trade Empire",
+    "type": "Military",
+    "cost": 15000,
+    "income": 400,
+    "image": "images/tradeempire.png",
+    "description": "Boosts income of all Merchantmen and increases their profit."
+  }
+]

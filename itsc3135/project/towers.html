@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloons Money Maker Tool – [Page Name]</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Bloons Money Maker Tool</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="towers.html">Towers</a></li>
+            <li><a href="crosspaths.html">Crosspaths</a></li>
+            <li><a href="efficiency.html">Efficiency</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Money-Making Towers</h2>
+
+    <div class="filters">
+        <input id="searchInput" type="text" placeholder="Search towers...">
+        <select id="typeFilter">
+            <option value="All">All Types</option>
+            <option value="Primary">Primary</option>
+            <option value="Military">Military</option>
+            <option value="Magic">Magic</option>
+            <option value="Support">Support</option>
+        </select>
+    </div>
+
+    <section id="towerContainer" class="tower-grid">
+        <!-- Towers will load here dynamically -->
+    </section>
+</main>
+
+<script src="js/towers.js"></script>
+
+<footer>
+    <p>&copy; 2025 Bloons Money Maker Tool | Created by Thomas Blackford</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
