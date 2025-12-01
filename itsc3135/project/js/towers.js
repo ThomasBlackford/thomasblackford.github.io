@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typeFilter = document.getElementById('typeFilter');
     let towers = [];
 
-    fetch('../data/towers.json')
+    fetch('data/towers.json')
         .then(res => res.json())
         .then(data => {
             towers = data;
