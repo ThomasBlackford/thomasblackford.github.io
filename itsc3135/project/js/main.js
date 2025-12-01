@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "js/footer.js"
     ];
 
-    globalScripts.forEach(src => {
+    globalScripts.forEach((src) => {
         const script = document.createElement("script");
         script.src = src;
-        document.body
+        document.body;
     });
 });
