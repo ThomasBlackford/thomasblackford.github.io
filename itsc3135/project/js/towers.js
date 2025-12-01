@@ -4,20 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const typeFilter = document.getElementById('typeFilter');
     let towers = [];
 
-    fetch('data/towers.json')
-        .then(res => res.json())
-        .then(data => {
-            towers = data;
-            displayTowers(towers);
-        })
-        .catch(err => {
-            console.error('Error loading towers:', err);
-            towerContainer.innerHTML = '<p>Failed to load tower data.</p>';
-        });
-
     function displayTowers(list) {
         towerContainer.innerHTML = '';
-        list.forEach(tower => {
+        list.forEach((tower) => {
             const card = document.createElement('article');
             card.classList.add('tower-card');
             card.innerHTML = `
@@ -32,10 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    fetch('data/towers.json')
+        .then((res) => res.json())
+        .then((data) => {
+            towers = data;
+            displayTowers(towers);
+        })
+        .catch((err) => {
+            console.error('Error loading towers:', err);
+            towerContainer.innerHTML = '<p>Failed to load tower data.</p>';
+        });
+
+    
+
     function filterTowers() {
         const searchTerm = searchInput.value.toLowerCase();
         const selectedType = typeFilter.value;
-        const filtered = towers.filter(t =>
+        const filtered = towers.filter((t) =>
             (selectedType === 'All' || t.type === selectedType) &&
             t.name.toLowerCase().includes(searchTerm)
         );

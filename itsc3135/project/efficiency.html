@@ -28,88 +28,88 @@
     <p>Compare towers by profit-to-cost ratio. The chart below displays income efficiency.</p>
     <canvas id="efficiencyChart" width="600" height="400"></canvas>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<select id="towerSelect"></select>
-<button id="addTowerBtn">Add Tower</button>
-<script>
-let towerList = [];
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <select id="towerSelect"></select>
+    <button id="addTowerBtn">Add Tower</button>
+    <script>
+        let towerList = [];
 
 
 
-function populateDropdown() {
-    const selector = document.getElementById("towerSelect");
-    selector.innerHTML = "";
+        function populateDropdown() {
+            const selector = document.getElementById("towerSelect");
+            selector.innerHTML = "";
 
-    towerList.forEach((t) => {
-        const opt = document.createElement("option");
-        opt.value = t.name;
-        opt.textContent = t.name;
-        selector.appendChild(opt);
-    });
-}
+            towerList.forEach((t) => {
+                const opt = document.createElement("option");
+                opt.value = t.name;
+                opt.textContent = t.name;
+                selector.appendChild(opt);
+            });
+        }
 
-async function loadTowers() {
-    const res = await fetch("data/towers.json");
-    towerList = await res.json();
-    populateDropdown();
-}
+        async function loadTowers() {
+            const res = await fetch("data/towers.json");
+            towerList = await res.json();
+            populateDropdown();
+        }
 
-function getEfficiency(tower) {
-    return tower.income / tower.cost;
-}
+        function getEfficiency(tower) {
+            return tower.income / tower.cost;
+        }
 
-function getPayoff(tower) {
-    return Math.ceil(tower.cost / tower.income);
-}
+        function getPayoff(tower) {
+            return Math.ceil(tower.cost / tower.income);
+        }
 
-const ctx = document.getElementById("efficiencyChart");
-const chart = new Chart(ctx, {
-    type: "bar",
-    data: {
-        labels: [],
-        datasets: [{
-            label: "Profit / Cost Ratio",
-            data: []
-        }]
-    },
-    options: {
-        plugins: {
-            tooltip: {
-                callbacks: {
-                    label: function (ctx) {
-                        const index = ctx.dataIndex;
-                        const towerName = chart.data.labels[index];
-                        const tower = towerList.find((t) => t.name === towerName);
+        const ctx = document.getElementById("efficiencyChart");
+        const chart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: [],
+                datasets: [{
+                    label: "Profit / Cost Ratio",
+                    data: []
+                }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (ctx) {
+                                const index = ctx.dataIndex;
+                                const towerName = chart.data.labels[index];
+                                const tower = towerList.find((t) => t.name === towerName);
 
-                        const efficiency = ctx.raw.toFixed(3);
-                        const payoff = Math.ceil((tower.cost / tower.income).toFixed(2));
+                                const efficiency = ctx.raw.toFixed(3);
+                                const payoff = Math.ceil((tower.cost / tower.income).toFixed(2));
 
-                        return [
-                            `Profit/Cost: ${efficiency}`,
-                            `Payoff Time: ${payoff} rounds`
-                        ];
+                                return [
+                                    `Profit/Cost: ${efficiency}`,
+                                    `Payoff Time: ${payoff} rounds`
+                                ];
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
-});
+        });
 
-document.getElementById("addTowerBtn").addEventListener("click", () => {
-    const name = document.getElementById("towerSelect").value;
-    const tower = towerList.find((t) => t.name === name);
-    if (!tower) return;
+        document.getElementById("addTowerBtn").addEventListener("click", () => {
+            const name = document.getElementById("towerSelect").value;
+            const tower = towerList.find((t) => t.name === name);
+            if (!tower) return;
 
-    if (!chart.data.labels.includes(name)) {
-        chart.data.labels.push(name);
-        chart.data.datasets[0].data.push(getEfficiency(tower));
-        chart.update();
-    }
-});
+            if (!chart.data.labels.includes(name)) {
+                chart.data.labels.push(name);
+                chart.data.datasets[0].data.push(getEfficiency(tower));
+                chart.update();
+            }
+        });
 
-loadTowers();
+        loadTowers();
 
-</script>
+    </script>
 
 </main>
 
