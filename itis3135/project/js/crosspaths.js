@@ -43,6 +43,18 @@ function updateStats() {
     document.getElementById("roundsToPayoff").textContent = `Rounds Until Payoff: ${roundsToPayoff}`;
 }
 
+function updateTowerImage() {
+    const img = document.getElementById("towerImage");
+
+    if (selectedTower.image) {
+        img.src = selectedTower.image;
+        img.style.display = "block";
+    } else {
+        img.style.display = "none";
+    }
+}
+
+
 
 function renderUpgrades() {
     const container = document.getElementById("top-path-upgrades");
@@ -61,6 +73,10 @@ function renderUpgrades() {
 
         btn.addEventListener("click", () => {
             selectedUpgrades.top = parseInt(lvl);
+            const upgrade = topUpgrades[lvl];
+            const img = document.getElementById("towerImage");
+            img.src = upgrade.image || selectedTower.image;
+            
             renderUpgrades();
             updateStats();
         });
@@ -83,6 +99,8 @@ function populateTowerDropdown() {
     select.addEventListener("change", () => {
         selectedTower = data[select.value];
         selectedUpgrades.top = 0;
+
+        updateTowerImage();
         renderUpgrades();
         updateStats();
     });

@@ -2,8 +2,9 @@
     "banana_farm": {
         "displayName": "Banana Farm",
         "baseCost":1500,
+        "image":"images/towers/farm.png",
 
-        "bunches":4,
+        "bunchesBase":4,
         "valuePerBanana": 20,
         "productionType": "bunch",
         "paths": {
@@ -11,19 +12,24 @@
                 "1": {
                     "cost":600,
                     "bunches": 2,
+                    "image":"images/towers/farms/100-BananaFarm.webp",
                     "description": "Increased Production: Produces 2 extra banana bunches per round."
                 },
                 "2":{
                     "cost":720,
                     "bunches": 2,
+                    "image":"images/towers/farms/200-BananaFarm.webp",
                     "description": "Greater Production: Produces 2 MORE extra banana bunches per round."
                 },
                 "3":{
                     "cost": 3600,
                     "bunches": 8,
+                    "image":"images/towers/farms/300-BananaFarm.webp",
                     "description": "Banana Plantation: Produces 8 extra banana bunches per round."
                 },
-                "4":{"cost": 22800, "setProduction": {
+                "4":{"cost": 22800,
+                "image":"images/towers/farms/400-BananaFarm.webp",
+                "setProduction": {
                     "productionType": "crate",
                     "crateValue": 300,
                     "crates": 5
@@ -32,6 +38,7 @@
                 },
                 "5":{
                     "cost": 138000,
+                    "image":"images/towers/farms/500-BananaFarm.webp",
                     "setProduction": {
                         "productionType": "crate",
                         "crateValue": 1200,
