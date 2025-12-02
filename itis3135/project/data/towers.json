@@ -4,15 +4,15 @@
     "type": "Support",
     "cost": 1200,
     "income": 80,
-    "image": "images/farm.png",
+    "image": "images/towers/farm.png",
     "description": "Generates bananas that grant cash each round."
   },
   {
     "name": "Merchantman",
     "type": "Military",
-    "cost": 2000,
+    "cost": 2800,
     "income": 200,
-    "image": "images/merchantman.png",
+    "image": "images/towers/merchantmen.png",
     "description": "Generates $200 per round. Can be upgraded to boost income."
   },
   {
@@ -20,7 +20,7 @@
     "type": "Military",
     "cost": 15000,
     "income": 400,
-    "image": "images/tradeempire.png",
+    "image": "images/towers/tradeempire.png",
     "description": "Boosts income of all Merchantmen and increases their profit."
   },
   {
@@ -28,7 +28,7 @@
   "type": "Support",
   "cost": 65200,
   "income": 5400,
-  "image": "images/monkeyopolis.png",
+  "image": "images/towers/monkeyopolis.png",
   "description": "Absorbs nearby Banana Farms to generate massive crate-based income. Produces 10 crates worth 540 each when absorbing nine 4-0-0 Farms."
 },
 {
@@ -36,8 +36,16 @@
   "type": "Support",
   "cost": 25200,
   "income": 1200,
-  "image": "images/miniopolis.png",
+  "image": "images/towers/monkeyopolis.png",
   "description": "A small Monkeyopolis created by sacrificing one basic Banana Farm. Produces 10 crates worth 120 each."
+},
+{
+  "name": "Banna Farm (BRF)",
+  "type": "Support",
+  "cost":22800,
+  "income": 1500,
+  "image": "images/towers/BRF.png",
+  "description": "A Banana Farm that produces income in crates. Each crate is worth 150."
 }
 
 
