@@ -55,5 +55,120 @@
 
             }
         }
-    }
+    },
+    "dart_monkey": {
+        "displayName": "Dart Monkey",
+        "baseCost": 240,
+        "image": "images/towers/dart_monkey.png",
+        "paths": {
+            "top": {
+                "1": {"cost":170,"image":"images/towers/dart/top1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":265,"image":"images/towers/dart/top2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":360,"image":"images/towers/dart/top3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":2160,"image":"images/towers/dart/top4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":18000,"image":"images/towers/dart/top5.png","description":"Upgrade 5","income":0}
+            },
+            "mid": {
+                "1": {"cost":120,"image":"images/towers/dart/mid1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":230,"image":"images/towers/dart/mid2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":480,"image":"images/towers/dart/mid3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":9600,"image":"images/towers/dart/mid4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":54000,"image":"images/towers/dart/mid5.png","description":"Upgrade 5","income":0}
+            },
+            "bot": {
+                "1": {"cost":110,"image":"images/towers/dart/bot1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":240,"image":"images/towers/dart/bot2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":750,"image":"images/towers/dart/bot3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":2400,"image":"images/towers/dart/bot4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":25800,"image":"images/towers/dart/bot5.png","description":"Upgrade 5","income":0}
+            }
+        }
+    },
+    "boomerang_monkey": {
+        "displayName": "Boomerang Monkey",
+        "baseCost": 330,
+        "image": "images/towers/boomerang_monkey.png",
+        "paths": {
+            "top": {
+                "1": {"cost":240,"image":"images/towers/boom/top1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":335,"image":"images/towers/boom/top2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":720,"image":"images/towers/boom/top3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":3600,"image":"images/towers/boom/top4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":35280,"image":"images/towers/boom/top5.png","description":"Upgrade 5","income":0}
+            },
+            "mid": {
+                "1": {"cost":210,"image":"images/towers/boom/mid1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":300,"image":"images/towers/boom/mid2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":1740,"image":"images/towers/boom/mid3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":5040,"image":"images/towers/boom/mid4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":42000,"image":"images/towers/boom/mid5.png","description":"Upgrade 5","income":0}
+            },
+            "bot": {
+                "1": {"cost":120,"image":"images/towers/boom/bot1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":360,"image":"images/towers/boom/bot2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":1560,"image":"images/towers/boom/bot3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":2640,"image":"images/towers/boom/bot4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":60000,"image":"images/towers/boom/bot5.png","description":"Upgrade 5","income":0}
+            }
+        }
+    },
+    "bomb_shooter": {
+        "displayName": "Bomb Shooter",
+        "baseCost": 630,
+        "image": "images/towers/bomb_shooter.png",
+        "paths": {
+            "top": {
+                "1": {"cost":420,"image":"images/towers/bomb/top1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":780,"image":"images/towers/bomb/top2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":1440,"image":"images/towers/bomb/top3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":4320,"image":"images/towers/bomb/top4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":66000,"image":"images/towers/bomb/top5.png","description":"Upgrade 5","income":0}
+            },
+            "mid": {
+                "1": {"cost":300,"image":"images/towers/bomb/mid1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":480,"image":"images/towers/bomb/mid2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":1320,"image":"images/towers/bomb/mid3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":3840,"image":"images/towers/bomb/mid4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":30000,"image":"images/towers/bomb/mid5.png","description":"Upgrade 5","income":0}
+            },
+            "bot": {
+                "1": {"cost":240,"image":"images/towers/bomb/bot1.png","description":"Upgrade 1","income":0},
+                "2": {"cost":360,"image":"images/towers/bomb/bot2.png","description":"Upgrade 2","income":0},
+                "3": {"cost":960,"image":"images/towers/bomb/bot3.png","description":"Upgrade 3","income":0},
+                "4": {"cost":3360,"image":"images/towers/bomb/bot4.png","description":"Upgrade 4","income":0},
+                "5": {"cost":42000,"image":"images/towers/bomb/bot5.png","description":"Upgrade 5","income":0}
+            }
+        }
+    },
+    
+"ice_monkey": {
+"displayName": "Ice Monkey",
+"baseCost": 600,
+"image": "images/towers/ice_monkey.png",
+"paths": {
+"top": {
+"1": {"cost":120,"image":"images/towers/ice/top1.png","description":"Upgrade 1","income":0},
+"2": {"cost":420,"image":"images/towers/ice/top2.png","description":"Upgrade 2","income":0},
+"3": {"cost":1800,"image":"images/towers/ice/top3.png","description":"Upgrade 3","income":0},
+"4": {"cost":2640,"image":"images/towers/ice/top4.png","description":"Upgrade 4","income":0},
+"5": {"cost":33600,"image":"images/towers/ice/top5.png","description":"Upgrade 5","income":0}
+},
+"mid": {
+"1": {"cost":270,"image":"images/towers/ice/mid1.png","description":"Upgrade 1","income":0},
+"2": {"cost":420,"image":"images/towers/ice/mid2.png","description":"Upgrade 2","income":0},
+"3": {"cost":3480,"image":"images/towers/ice/mid3.png","description":"Upgrade 3","income":0},
+"4": {"cost":3600,"image":"images/towers/ice/mid4.png","description":"Upgrade 4","income":0},
+"5": {"cost":24000,"image":"images/towers/ice/mid5.png","description":"Upgrade 5","income":0}
+},
+"bot": {
+"1": {"cost":210,"image":"images/towers/ice/bot1.png","description":"Upgrade 1","income":0},
+"2": {"cost":270,"image":"images/towers/ice/bot2.png","description":"Upgrade 2","income":0},
+"3": {"cost":2340,"image":"images/towers/ice/bot3.png","description":"Upgrade 3","income":0},
+"4": {"cost":3300,"image":"images/towers/ice/bot4.png","description":"Upgrade 4","income":0},
+"5": {"cost":36000,"image":"images/towers/ice/bot5.png","description":"Upgrade 5","income":0}
 }
+}
+}
+}
+
+
