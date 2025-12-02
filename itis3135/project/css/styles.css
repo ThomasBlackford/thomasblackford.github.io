@@ -1,4 +1,3 @@
-/* ----------------- Variables ----------------- */
 :root {
     --primary-color: #ffcc00;
     --secondary-color: #ff6600;
@@ -7,7 +6,7 @@
     --bg-gradient: linear-gradient(to bottom, #8ed0ff, #ffffff);
 }
 
-/* ----------------- Global ----------------- */
+
 * {
     transition: all 0.2s ease;
 }
@@ -37,7 +36,7 @@ html, body {
     padding: 0;
 }
 
-/* ----------------- Header & Nav ----------------- */
+
 header {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color: #fff;
@@ -76,7 +75,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* ----------------- Headings ----------------- */
+
 h1, h2, h3, h4 {
     font-weight: 700;
     color: #333;
@@ -91,7 +90,7 @@ h2 {
     margin-top: 0.5rem;
 }
 
-/* ----------------- Main ----------------- */
+
 main {
     max-width: 1000px;
     margin: 2rem auto;
@@ -101,7 +100,7 @@ main {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ----------------- Sections & Scroll Animation ----------------- */
+
 section {
     margin-bottom: 2rem;
     opacity: 0;
@@ -114,7 +113,7 @@ section.visible {
     transform: translateY(0);
 }
 
-/* ----------------- Figures & Images ----------------- */
+
 figure {
     display: block;
     text-align: center;
@@ -141,7 +140,7 @@ figcaption {
     margin-top: 0.3rem;
 }
 
-/* ----------------- Footer ----------------- */
+
 footer {
     background-color: var(--primary-color);
     color: #333;
@@ -155,7 +154,7 @@ footer {
     width: 100%;
 }
 
-/* ----------------- Lists & Links ----------------- */
+
 ul {
     margin-left: 1.5rem;
 }
@@ -164,7 +163,7 @@ a {
     color: var(--accent-color);
 }
 
-/* ----------------- Buttons ----------------- */
+
 .btn {
     transition: transform 0.2s ease, background-color 0.3s ease;
 }
@@ -313,7 +312,7 @@ a {
     right: -50px;
 } */
 
-/* ----------------- Mobile Responsiveness ----------------- */
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
