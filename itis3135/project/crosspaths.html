@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/main.js"></script>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <script src="js/crosspaths.js"></script>
 </head>
 
 <body>
@@ -24,28 +25,28 @@
 </header>
 
 <main>
-    <h2>Crosspath Effects</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Tower</th>
-                <th>Crosspath</th>
-                <th>Effect on Income</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Banana Farm</td>
-                <td>2-3-0</td>
-                <td>Faster production, +15% income rate</td>
-            </tr>
-            <tr>
-                <td>Merchantman</td>
-                <td>0-2-3</td>
-                <td>Increased cash payout per round</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="tool">
+
+    <div id="tower-selector">
+        <label for="towerSelect">Select Tower:</label>
+        <select id="towerSelect">
+        </select>
+    </div>
+
+    <div id="upgrade-controls">
+        <h3>Upgrades</h3>
+        <div id="top-path-upgrades"></div>
+    </div>
+
+    <div id="stats">
+        <h3>Stats</h3>
+        <p id="totalCost">Total Cost: $0</p>
+        <p id="incomePerRound">Income Per Round: 0</p>
+        <p id="roundsToPayoff">Rounds Until Payoff: 0</p>
+    </div>
+
+</div>
+
 </main>
 
 

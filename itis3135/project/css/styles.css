@@ -1,19 +1,82 @@
+/* ----------------- Variables ----------------- */
+:root {
+    --primary-color: #ffcc00;
+    --secondary-color: #ff6600;
+    --accent-color: #1e90ff;
+    --text-color: #222;
+    --bg-gradient: linear-gradient(to bottom, #8ed0ff, #ffffff);
+}
+
+/* ----------------- Global ----------------- */
+* {
+    transition: all 0.2s ease;
+}
+
+main {
+    flex: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(to bottom, #8ed0ff, #ffffff);
-    color: #222;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+}
+
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
+/* ----------------- Header & Nav ----------------- */
 header {
-    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color: #fff;
     text-align: center;
     padding: 1.5rem;
     border-bottom: 4px solid #cc3300;
 }
 
+nav {
+    background-color: var(--accent-color);
+    border-bottom: 3px solid #0c5ba0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0.5rem 0;
+    gap: 2rem;
+    margin: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* ----------------- Headings ----------------- */
 h1, h2, h3, h4 {
     font-weight: 700;
     color: #333;
@@ -28,58 +91,47 @@ h2 {
     margin-top: 0.5rem;
 }
 
-nav {
-    background-color: #1e90ff;
-    border-bottom: 3px solid #0c5ba0;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
-}
-
-nav li {
-    margin: 0 1rem;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ffcc00;
-    transform: scale(1.05);
-}
-
+/* ----------------- Main ----------------- */
 main {
     max-width: 1000px;
     margin: 2rem auto;
     padding: 1rem 2rem;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* ----------------- Sections & Scroll Animation ----------------- */
 section {
     margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------- Figures & Images ----------------- */
 figure {
     display: block;
     text-align: center;
     margin: 1rem 0;
 }
 
-figure img {
-    max-width: 90%;
-    border: 3px solid #ffcc00;
-    border-radius: 15px;
+figure img, .tower-card img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+figure img:hover, .tower-card img:hover {
+    transform: scale(1.02);
 }
 
 figcaption {
@@ -89,19 +141,123 @@ figcaption {
     margin-top: 0.3rem;
 }
 
+/* ----------------- Footer ----------------- */
 footer {
-    background-color: #ffcc00;
+    background-color: var(--primary-color);
     color: #333;
     text-align: center;
     padding: 1rem 0;
     border-top: 3px solid #cc3300;
     font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
+/* ----------------- Lists & Links ----------------- */
 ul {
     margin-left: 1.5rem;
 }
 
 a {
-    color: #0066cc;
+    color: var(--accent-color);
 }
+
+/* ----------------- Buttons ----------------- */
+.btn {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: #ffb700;
+}
+
+.tower-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.tower-grid .tower-card {
+    background: rgba(255,255,255,0.95);
+    
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tower-grid .tower-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filters {
+    margin-bottom: 2rem;
+}
+
+#towerContainer {
+    background-color: #d8cdcd;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.fun-facts {
+    background-color: #c7b46f;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.fun-facts h3 {
+    margin-bottom: 1rem;
+}
+
+.fact-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    min-height: 80px;
+}
+
+#factDisplay {
+    display: inline-block;
+    max-width: 500px;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+
+    flex: 1;
+    text-align: center;
+}
+
+.banana-gif {
+    width: 60px;
+    height: auto;
+}
+
+/* .red-bloon-left,
+.red-bloon-right {
+    position: fixed;
+    top: 50%;
+    width: 80px;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.red-bloon-left {
+    left: -50px;
+}
+
+.red-bloon-right {
+    right: -50px;
+} */

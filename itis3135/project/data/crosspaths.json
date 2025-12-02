@@ -1,0 +1,52 @@
+{
+    "banana_farm": {
+        "displayName": "Banana Farm",
+        "baseCost":1500,
+
+        "bunches":4,
+        "valuePerBanana": 20,
+        "productionType": "bunch",
+        "paths": {
+            "top": {
+                "1": {
+                    "cost":600,
+                    "bunches": 2,
+                    "description": "Increased Production: Produces 2 extra banana bunches per round."
+                },
+                "2":{
+                    "cost":720,
+                    "bunches": 2,
+                    "description": "Greater Production: Produces 2 MORE extra banana bunches per round."
+                },
+                "3":{
+                    "cost": 3600,
+                    "bunches": 8,
+                    "description": "Banana Plantation: Produces 8 extra banana bunches per round."
+                },
+                "4":{"cost": 22800, "setProduction": {
+                    "productionType": "crate",
+                    "crateValue": 300,
+                    "crates": 5
+                    }, 
+                    "description": "Banana Research Facility: Instead of bananas, produces 5 crates per round, each crate worth $300."
+                },
+                "5":{
+                    "cost": 138000,
+                    "setProduction": {
+                        "productionType": "crate",
+                        "crateValue": 1200,
+                        "crates": 5
+                    },
+                    "description": "Banana Central: Crates are worth 4x more, 1200$ per crate. All BRF crates are worth +25% more, rounded down."
+                }
+
+            },
+            "mid": {
+
+            },
+            "bot": {
+
+            }
+        }
+    }
+}
