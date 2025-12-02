@@ -273,6 +273,26 @@ a {
     padding: 1.5rem;
 }
 
+.tribute {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.spinning-image {
+    width: 150px;
+    height: auto;
+    margin-top: 1rem;
+    animation: spin 5s linear infinite;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
 
 
 /* .red-bloon-left,
