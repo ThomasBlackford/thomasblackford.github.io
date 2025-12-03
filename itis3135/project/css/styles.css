@@ -68,6 +68,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s, transform 0.3s;
+    font-size: 20px;
 }
 
 nav a:hover {
