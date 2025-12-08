@@ -76,6 +76,50 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+/* Project-specific navigation styles */
+.project-nav {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-nav h2 {
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.project-nav ul {
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-nav li {
+    margin: 0.25rem 0.5rem;
+}
+
+.project-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project-nav a:hover {
+    background-color: #fff;
+    color: var(--accent-color);
+}
+
 
 h1, h2, h3, h4 {
     font-weight: 700;
@@ -181,7 +225,7 @@ a {
 }
 .tower-grid .tower-card {
     background: rgba(255,255,255,0.95);
-    
+
     padding: 1rem;
     border-radius: 15px;
     text-align: center;
@@ -359,6 +403,68 @@ a {
     footer {
         position: relative;
     }
+
+    /* Responsive styles for project navigation */
+    .project-nav {
+        padding: 0.75rem;
+    }
+
+    .project-nav h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-nav li {
+        margin: 0.25rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-nav a {
+        display: block;
+        padding: 0.5rem;
+    }
+}
+
+/* Summary Document Styles */
+.summary-section {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.summary-section h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.summary-section h4 {
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.summary-section ul, .summary-section ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.summary-section li {
+    margin-bottom: 0.5rem;
+}
+
+.validators {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 @media (max-width: 480px) {
@@ -380,5 +486,9 @@ a {
 
     .tower-grid .tower-card {
         padding: 0.75rem;
+    }
+
+    .summary-section {
+        padding: 1rem;
     }
 }

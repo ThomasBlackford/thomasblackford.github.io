@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (() => {
     const globalScripts = [
+        "js/header.js",
         "js/footer.js",
         "js/load.js",
         "js/facts.js"
@@ -10,4 +11,4 @@ document.addEventListener("DOMContentLoaded", () => {
         script.src = src;
         document.body.appendChild(script);
     });
-});
+}));

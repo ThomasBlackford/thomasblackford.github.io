@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (() => {
     const towerContainer = document.getElementById('towerContainer');
     const searchInput = document.getElementById('searchInput');
     const typeFilter = document.getElementById('typeFilter');
@@ -47,4 +47,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('input', filterTowers);
     typeFilter.addEventListener('change', filterTowers);
-});
+}));

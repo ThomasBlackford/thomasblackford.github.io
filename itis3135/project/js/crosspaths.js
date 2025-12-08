@@ -71,7 +71,7 @@ function renderUpgrades() {
             btn.classList.add("active");
         }
 
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (() => {
             selectedUpgrades.top = parseInt(lvl);
             const upgrade = topUpgrades[lvl];
             const img = document.getElementById("towerImage");
@@ -79,7 +79,7 @@ function renderUpgrades() {
             
             renderUpgrades();
             updateStats();
-        });
+        }));
 
         container.appendChild(btn);
     });
@@ -96,14 +96,14 @@ function populateTowerDropdown() {
         select.appendChild(opt);
     });
 
-    select.addEventListener("change", () => {
+    select.addEventListener("change", (() => {
         selectedTower = data[select.value];
         selectedUpgrades.top = 0;
 
         updateTowerImage();
         renderUpgrades();
         updateStats();
-    });
+    }));
 
     select.dispatchEvent(new Event("change"));
 }
@@ -115,5 +115,3 @@ fetch("data/crosspaths.json")
       data = json;
       populateTowerDropdown();
   });
-
-  

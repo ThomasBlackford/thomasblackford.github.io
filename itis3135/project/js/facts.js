@@ -21,12 +21,12 @@ const factDisplay = document.getElementById("factDisplay");
 function showNextFact() {
     factDisplay.style.opacity = 0;
 
-    setTimeout(() => {
+    setTimeout((() => {
         factDisplay.textContent = funFacts[factIndex];
         factIndex = (factIndex + 1) % funFacts.length;
 
         factDisplay.style.opacity = 1;
-    }, 800);
+    }), 800);
 }
 
 
